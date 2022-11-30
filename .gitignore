@@ -4,6 +4,7 @@
 target/
 build/
 captures/
+gradle/
 
 #files
 *.iml
