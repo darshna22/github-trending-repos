@@ -8,7 +8,7 @@ captures/
 #files
 *.iml
 local.properties
-.DS_Store
-.externalNativeBuild
-.cxx
+*.DS_Store
+*.externalNativeBuild
+*.cxx
 local.properties
