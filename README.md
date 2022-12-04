@@ -32,7 +32,7 @@ Whenever you are done, just create a release in github or contact HR!
 <!--[![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=23)-->
 
 <p align="center">
-  <a href="https://android-arsenal.com/api?level=23" target="_blank">
+  <a href="https://android-arsenal.com/api?level=23" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat"/>
   </a>
 </p>
