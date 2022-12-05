@@ -1,20 +1,26 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply from: '../dependencies.gradle'
 
 android {
-    namespace 'com.xapo.test_project_darshna22'
-    compileSdk 32
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
         applicationId "com.xapo.test_project_darshna22"
-        minSdk 23
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+        vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
@@ -34,11 +40,51 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    testImplementation project(path: ':app')
+
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+
+    // android supports
+    implementation "com.google.android.material:material:$versions.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintVersion"
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
+
+    // coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion"
+
+    // navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navVersion"
+
+    // glide
+    implementation "com.github.bumptech.glide:glide:$versions.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$versions.glideVersion"
+
+    // dagger hilt
+    kapt "com.google.dagger:hilt-android-compiler:$versions.hilttVersion"
+    implementation "com.google.dagger:hilt-android:$versions.hilttVersion"
+    kapt "androidx.hilt:hilt-compiler:$versions.androidHiltVersion"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$versions.androidHiltKaptVersion"
+
+    // paging 3
+    implementation "androidx.paging:paging-runtime:$versions.pagingVersion"
+
+    //intuit Dimen different screen sizes and densities
+    implementation "com.intuit.ssp:ssp-android:$versions.intuitVersion"
+    implementation "com.intuit.sdp:sdp-android:$versions.intuitSdpVersion"
+
+    implementation deps.appCompact
+    testImplementation deps.coroutines_test
+    testImplementation deps.androidx_test
+    testImplementation deps.kotlin_mockito
+    testImplementation deps.livedata_test
+    androidTestImplementation deps.androidx_test
+    androidTestImplementation deps.espresso
+    androidTestImplementation deps.idling_resource
 }

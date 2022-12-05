@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="AppTheme.Title">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.Subtitle">
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="AppTheme.Description">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="drawableTint">@color/colorDescription</item>
+        <item name="android:textColor">@color/colorDescription</item>
+    </style>
+
+</resources>
