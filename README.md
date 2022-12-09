@@ -57,7 +57,7 @@ I have decided to use [GitHub Search API](https://docs.github.com/en/rest/search
 * [Glide](https://github.com/bumptech/glide) - loading images.
 * [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
 * [Material-Components](https://github.com/material-components/material-components-android) - Material design components like ripple animation, cardView.
-* 
+* mockito-test library
 
 
 
